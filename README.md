@@ -4,4 +4,6 @@ V1.5
 3.每行展示App调整为4个
 4.横屏拨号窗口微调 
 5.隐藏标题栏
-[图片][图片][图片]
+![](http://yuntu88.oss-cn-beijing.aliyuncs.com/fromlocal/kangjinwen@126.com/20200517/d2TfncANsp.png)
+![](http://yuntu88.oss-cn-beijing.aliyuncs.com/fromlocal/kangjinwen@126.com/20200517/4MbBwaxsss.png)
+![](http://yuntu88.oss-cn-beijing.aliyuncs.com/fromlocal/kangjinwen@126.com/20200517/DjzwAWdChP.png)
