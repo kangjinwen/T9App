@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+/*V1.5
+*1.增加日间夜间模式切换 2.T9拨号窗缩小并底部居中  3.每行展示App调整为4个 4.横屏拨号窗口微调 5.隐藏标题栏
+*/
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.fei_ke.t9"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 5
+        versionName "1.5"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+//    signingConfigs {
+//        release {
+//            storeFile file(project.STORE_FILE_PATH)
+//            storePassword project.STORE_PASSWORD
+//            keyAlias project.KEY_ALIAS
+//            keyPassword project.KEY_PASSWORD
+//            v1SigningEnabled true
+//            v2SigningEnabled true
+//        }
+//    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+        debug {
+//            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.1-alpha01', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+
+    implementation('com.airbnb.android:epoxy:3.0.0') {
+        exclude group: "com.android.support"
+    }
+    kapt 'com.airbnb.android:epoxy-processor:3.0.0'
+
+    implementation "io.reactivex.rxjava2:rxjava:2.2.4"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+}
+
